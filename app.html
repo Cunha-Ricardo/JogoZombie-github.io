@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="estilo.css"/>
-        <script src="jogo.js"></script>
-        
-    </head>
-    <body onresize="ajustartamanhoPalcoJogo()">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo.css"/>
+    <script src="jogo.js"></script>
+</head>
+<body onresize="ajustartamanhoPalcoJogo()">
 
-        <audio controls src="imagens\Plants vs Zombies Soundtrack. [Day Stage].mp3">
-          </audio>
+    <audio id="demo" src="imagens\Plants vs Zombies Soundtrack. [Day Stage].mp3">
+    </audio>
 
-        <div class="painel">
-            <div class="vidas">
-                <img id="v1" src="imagens/coracao_cheio.png"/>
-                <img id="v2" src="imagens/coracao_cheio.png"/>
-                <img id="v3" src="imagens/coracao_cheio.png"/>
-            </div>
+<div class="painel">
+    <div class="vidas">
+        <img id="v1" src="imagens/coracao_cheio.png"/>
+        <img id="v2" src="imagens/coracao_cheio.png"/>
+        <img id="v3" src="imagens/coracao_cheio.png"/>
+    </div>
 
-            <div class="cronometro"> Tempo restante: <span id="cronometro"></span></div>
-        </div>
+    <div class="cronometro"> Tempo restante: <span id="cronometro"></span></div>
+    <div class="score"> Pontuação: <span id="game-score">0</span></div> <!-- Adiciona a exibição da pontuação -->
+</div>
 
-        <script>
-            document.getElementById('cronometro').innerHTML = tempo
+<script>
+    document.getElementById('cronometro').innerHTML = tempo;
 
-            var criaZombie =setInterval(function(){
-                posicaoRandomica()
-            }, criaZombieTempo)
-        </script>   
-    </body>
+    var criaZombie = setInterval(function() {
+        posicaoRandomica();
+    }, criaZombieTempo);
+    var v = document.getElementById('demo');
+            v.play();
+</script>
+</body>
 </html>
